@@ -132,3 +132,104 @@ let greatest=checkGreatest(5,8)
 
 
 console.log("greatest is ",greatest)
+
+
+
+// wap to checksmallest 
+
+// function checkSmallest (first,second){
+// if(first<second)
+// {
+//     return first
+// }else{
+//     return second
+// }
+// }
+
+
+// let smallest=checkSmallest(5,9)
+// console.log("smallest is ",smallest)
+
+
+
+
+
+// loop
+
+// . for 
+ 
+// . while 
+
+
+// postincreament
+
+//  initial value: represent by i
+// condition : which give booleann value
+// increamet/ decreament
+
+
+// write a program to console your name ten times using for loop
+//  let name="Arjun"
+// for (i=1;i<=10;i++){
+//     console.log(name)
+// }
+
+
+// wap to console 1 to 20 even number uisng for loop
+
+
+// for(i=3;i<20; i=i+1){
+//     if(i%2==0){
+//         console.log(i)
+//     }
+
+//     // console.log(i)
+
+// // }
+
+// let numer=1452
+
+// output=2541
+
+
+
+// number / eg let num=8
+// string / eg let name="luky"
+
+
+// let name="skillspark"
+
+// // console.log(name.at(6))
+
+// let firstname="skill"
+// let secondname="spark"
+
+
+// console.log(firstname.toUpperCase().concat(secondname.toUpperCase()))
+
+
+
+// Number,string,Boolean,null,unkown,NaN\
+//  Array,Object
+
+// collection same type data
+// eg ["arjn","ganes","nsnf"]
+
+// let names=['ganes','bishal']
+
+// names.push('aditya')
+// // names.shift()
+// console.log(names.length)   
+
+// for (i=0;i<=names.length-1;i++){
+// console.log(names[i])
+// }
+
+
+
+
+
+
+
+
+
