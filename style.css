@@ -1,10 +1,10 @@
 
 
-body{
+/* body{
     background: #000;
-}
+} */
 
-
+/* 
 
 
 
@@ -16,8 +16,8 @@ body{
 
 
   
-@media screen and (min-width: 767.98px) {
+@media screen and (max-width: 767.98px) {
     body {
       background-color: green;
     }
-  }
+  } */

@@ -225,11 +225,95 @@ console.log("greatest is ",greatest)
 // console.log(names[i])
 // }
 
+// object
+
+const userdetails={
+    name:"Arjun",
+    age:25,
+    phone:"9841424",
+    address:"maitidevi",
+    email:"arjun@gmail.com"
+}
+
+
+// array of bojects
+
+// const details=[
+//     {
+//         name:"Arjun",
+//         age:25,
+//         phone:"9841424",
+//         address:"maitidevi",
+//         email:"arjun@gmail.com"
+//     }
+//     ,{
+//         name:"Ram",
+//         age:25,
+//         phone:"9841424",
+//         address:"maitidevi",
+//         email:"arjun@gmail.com"
+//     },
+//     {
+//         name:"shyam",
+//         age:25,
+//         phone:"9841424",
+//         address:"maitidevi",
+//         email:"arjun@gmail.com"
+//     }
+    
+    
+// ]
 
 
 
 
+// create a datalist for restro menu
+
+// let menu=[
+//     {
+//         title:'drinks',
+//         items:[
+//             {
+//                 name:"cococola",
+//                 price:200,
+
+//             },{
+//                 name:"pepsi",
+
+//             }
+//         ]
+//     },{
+//         title:"snacks",
+//         items:[
+//             {
+//                 name:"momo",
+//                 price:120
+//             },{
+//              name:"chaumin",
+//              price:80   
+//             }
+//         ]
+//     },
 
 
+// ]
+
+
+
+// console.log(menu)
+// document.getElementById("container").innerHTML="Hello world"
+
+
+// let name="arjun"
+// let detail= `my name is ${name}`
+
+
+
+
+let todo=["weakup","brush"]
+let container=document.getElementById("container")
+container.innerHTML= `${todo[0]} <br> ${todo[1]}`
+container.style.backgroundColor="blue"
+container.style.color="white"
 
 
