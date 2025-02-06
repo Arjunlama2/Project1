@@ -352,46 +352,63 @@ function addTask(event){
     event.preventDefault();
     let task=event.target.task.value
     todo.push(task)
-    // localStorage.setItem("todo",todo)
-    display()
+  
+    localStorage.setItem("todo",JSON.stringify(todo))
+    // display()
+    displaytodo()
 
 }
 
 
-let container=document.getElementById("container")
+// let container=document.getElementById("container")
 
-function display(){
-    document.getElementById("container").innerHTML=""
-    todo.forEach((el,index)=>{
-        let li=document.createElement("li")
-        let remove=document.createElement("button")
-        let edit=document.createElement("button")
-        edit.textContent="Edit"
-        edit.addEventListener("click",()=>editTask(index))
-        remove.textContent="Delete"
-        li.textContent=el
-        remove.addEventListener("click",()=>deteleteTask(index))
-       li.appendChild(remove)
-       li.appendChild(edit)
-       container.appendChild(li)
+// function display(){
+//     document.getElementById("container").innerHTML=""
+//     todo.forEach((el,index)=>{
+//         let li=document.createElement("li")
+//         let remove=document.createElement("button")
+//         let edit=document.createElement("button")
+//         edit.textContent="Edit"
+//         edit.addEventListener("click",()=>editTask(index))
+//         remove.textContent="Delete"
+//         li.textContent=el
+//         remove.addEventListener("click",()=>deteleteTask(index))
+//        li.appendChild(remove)
+//        li.appendChild(edit)
+//        container.appendChild(li)
      
-    })
-}
+//     })
+// }
 
 
 function deteleteTask(index){
-    
+
 todo.splice(index,1)
-display()
+// display()
+displaytodo()
 }
 
 
 function editTask(index){
+    c
         let input=document.getElementById("task")
         input.value=todo[index]
         deteleteTask(index)
 }
 
+
+function displaytodo(){
+    let str=''
+    let localstorageTodo=localStorage.getItem("todo")
+    let newtodo=JSON.parse(localstorageTodo)
+    newtodo.forEach((el,index)=>{
+        str+=`<li>${el}<button onclick="deteleteTask(${index})">Delete</button> `
+        document.getElementById("container").innerHTML=str
+    })
+}
+
+
+displaytodo()
 
 // let numbers=[
 //     1,5,8,9,2,5,12,6,0,10,62
@@ -401,3 +418,55 @@ function editTask(index){
 // let removeditme=numbers.splice(3,1)
 // console.log(numbers)
 // console.log(removeditme)
+
+
+//  task 1
+// let person={
+//     fiirst_name:"arjun",
+//     last_name:"lama",
+//     email:"arjunlama@gmail.com"
+// }
+
+
+// console.log(`Full name is ${person.fiirst_name} ${person.last_name} and email is ${person.email}`)//full name is arjun lama and email is .....
+
+
+const detail={
+    first_name:"Hari",
+    last_name:"Kurmar",
+    country:"India"
+}
+
+
+// 1 currect last_name and country 
+//2  console Hari bhadur is from nepal 
+
+
+// detail.last_name="Bahadur"
+// detail.country="Nepal"
+
+// console.log(detail)
+
+
+// task 3
+const person={
+    first_name:"arjun",
+    last_name:"lama",
+}
+
+
+// create a function to generate email 
+
+// function emailgenerator( person){
+// let email=person.first_name+person.last_name+"@gmail.com"
+// person.email=email
+// return person
+// }
+
+
+
+// let newperson=emailgenerator(person)
+
+// console.log(newperson)
+
+
