@@ -48,10 +48,10 @@
 
 
 
- function add (first,second){
-let c=first+second
-return c
- }
+//  function add (first,second){
+// let c=first+second
+// return c
+//  }
 
 
 //  function subtract (first,second){
@@ -118,20 +118,20 @@ return c
 
 
 
-function checkGreatest(first,second){
-    if(first>second){
-        return  first
-    }
-    else{
-        return second
-    }
-}
+// function checkGreatest(first,second){
+//     if(first>second){
+//         return  first
+//     }
+//     else{
+//         return second
+//     }
+// }
 
 
-let greatest=checkGreatest(5,8)
+// let greatest=checkGreatest(5,8)
 
 
-console.log("greatest is ",greatest)
+// console.log("greatest is ",greatest)
 
 
 
@@ -227,13 +227,13 @@ console.log("greatest is ",greatest)
 
 // object
 
-const userdetails={
-    name:"Arjun",
-    age:25,
-    phone:"9841424",
-    address:"maitidevi",
-    email:"arjun@gmail.com"
-}
+// const userdetails={
+//     name:"Arjun",
+//     age:25,
+//     phone:"9841424",
+//     address:"maitidevi",
+//     email:"arjun@gmail.com"
+// }
 
 
 // array of bojects
@@ -310,10 +310,94 @@ const userdetails={
 
 
 
-let todo=["weakup","brush"]
+// let todo=["weakup","brush"]
+// let container=document.getElementById("container")
+// container.innerHTML= `${todo[0]} <br> ${todo[1]}`
+// container.style.backgroundColor="blue"
+// container.style.color="white"
+
+
+// let numbers=[
+//     1,5,8,9,2,5,12,6,0,10,62
+// ]
+
+// for (number of numbers){
+// console.log("number is",number)
+// }
+
+// arrow function
+// callback function , annonomus functtion
+// const addtwonumbr=(a,b)=>{
+// return a+b
+// }
+ 
+// console.log(addtwonumbr(4,6))
+
+// let data=''
+
+// numbers.forEach((el)=>{
+//     console.log(el)
+//  el.toString()
+//  data=data+'<br>'+el
+
+//    document.getElementById("container").innerHTML=data
+// })
+
+
+const todo=[]
+
+
+
+function addTask(event){
+    event.preventDefault();
+    let task=event.target.task.value
+    todo.push(task)
+    // localStorage.setItem("todo",todo)
+    display()
+
+}
+
+
 let container=document.getElementById("container")
-container.innerHTML= `${todo[0]} <br> ${todo[1]}`
-container.style.backgroundColor="blue"
-container.style.color="white"
+
+function display(){
+    document.getElementById("container").innerHTML=""
+    todo.forEach((el,index)=>{
+        let li=document.createElement("li")
+        let remove=document.createElement("button")
+        let edit=document.createElement("button")
+        edit.textContent="Edit"
+        edit.addEventListener("click",()=>editTask(index))
+        remove.textContent="Delete"
+        li.textContent=el
+        remove.addEventListener("click",()=>deteleteTask(index))
+       li.appendChild(remove)
+       li.appendChild(edit)
+       container.appendChild(li)
+     
+    })
+}
 
 
+function deteleteTask(index){
+    
+todo.splice(index,1)
+display()
+}
+
+
+function editTask(index){
+        let input=document.getElementById("task")
+        input.value=todo[index]
+        deteleteTask(index)
+}
+
+
+// let numbers=[
+//     1,5,8,9,2,5,12,6,0,10,62
+// ]
+
+
+// let removeditme=numbers.splice(3,1)
+// console.log(numbers)
+// console.log(removeditme)
