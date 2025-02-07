@@ -344,21 +344,6 @@
 // })
 
 
-const todo=[]
-
-
-
-function addTask(event){
-    event.preventDefault();
-    let task=event.target.task.value
-    todo.push(task)
-  
-    localStorage.setItem("todo",JSON.stringify(todo))
-    // display()
-    displaytodo()
-
-}
-
 
 // let container=document.getElementById("container")
 
@@ -381,34 +366,8 @@ function addTask(event){
 // }
 
 
-function deteleteTask(index){
-
-todo.splice(index,1)
-// display()
-displaytodo()
-}
 
 
-function editTask(index){
-    c
-        let input=document.getElementById("task")
-        input.value=todo[index]
-        deteleteTask(index)
-}
-
-
-function displaytodo(){
-    let str=''
-    let localstorageTodo=localStorage.getItem("todo")
-    let newtodo=JSON.parse(localstorageTodo)
-    newtodo.forEach((el,index)=>{
-        str+=`<li>${el}<button onclick="deteleteTask(${index})">Delete</button> `
-        document.getElementById("container").innerHTML=str
-    })
-}
-
-
-displaytodo()
 
 // let numbers=[
 //     1,5,8,9,2,5,12,6,0,10,62
@@ -470,3 +429,50 @@ const person={
 // console.log(newperson)
 
 
+
+const todo=[]
+
+
+displaytodo()
+
+function addTask(event){
+    event.preventDefault();
+    let task=event.target.task.value
+    todo.push(task)
+  
+    localStorage.setItem("todo",JSON.stringify(todo))
+    // display()
+    displaytodo()
+
+}
+
+function displaytodo(){
+    let str=''
+    let localstorageTodo=localStorage.getItem("todo")
+    let newtodo=JSON.parse(localstorageTodo)
+    newtodo.forEach((el,index)=>{
+        str+=`<li>${el}<button onclick="deteleteTask(${index})">Delete</button> <button onclick="editTask(${index})">Edit</button> `
+        document.getElementById("container").innerHTML=str
+    })
+}
+
+
+
+function deteleteTask(index){
+    let newtodo=localStorage.getItem('todo')
+    newtodo=JSON.parse(newtodo)
+    newtodo.splice(index,1)
+    localStorage.setItem("todo",JSON.stringify(newtodo))
+    displaytodo()
+    }
+    
+    
+    function editTask(index){
+        
+            let input=document.getElementById("task")
+            let newTodo=JSON.parse(localStorage.getItem("todo"))
+            input.value=newTodo[index]
+            deteleteTask(index)
+    }
+    
+    
